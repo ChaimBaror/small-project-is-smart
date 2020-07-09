@@ -1,0 +1,33 @@
+<p>from works!</p>
+
+<div class="card">
+<form [formGroup]="wizardService.wizardForm" (ngSubmit)="wizardService.handleSubmit()">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Year of Birth</label>
+        <input type="number" class="form-control" [unique]="[2050]" [ngClass]="getValidationCssClass('yearOfBirth')"
+            formControlName="yearOfBirth">
+    </div>
+    <button (click)="addChild()" class="btn btn-primary">add child</button>
+    <ng-container *ngFor="let child of children; index as i">
+        <div class="form-group">
+            <input type="number" [formControl]="$any(children[i])">
+        </div>
+    </ng-container>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" [ngClass]="getValidationCssClass('email')" formControlName="email">
+        <pre>{{ this.wizardService.getControl('email').errors | json }}</pre>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" [unique]="['nir','joe']"
+            [ngClass]="getValidationCssClass('password')" formControlName="password">
+        <pre>{{ this.wizardService.getControl('password').errors | json }}</pre>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" formControlName="agree">
+        <label class="form-check-label">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>

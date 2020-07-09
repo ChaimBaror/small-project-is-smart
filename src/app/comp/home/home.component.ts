@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Qushin } from 'src/app/class/qushin';
+import { WizardValidators } from 'src/app/service/WizardValidators';
+
+WizardValidators
 
 @Component({
   selector: 'app-home',
