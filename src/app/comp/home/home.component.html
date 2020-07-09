@@ -1,0 +1,31 @@
+<p>home works!</p>
+
+
+<button (click)=newQushin()>newQushin</button>
+<div class="container" *ngFor="let q of arrayqushin ">
+    <ul>
+        <li>this is : {{q.q}} : {{q.id_q}}</li>
+    </ul>
+
+    <div>
+        <div class="row" >
+            <div appColor class="col-sm" (click)=som(q.anser[points[0]].istrue)>
+                One of three columns
+                <a href=""> {{ q.anser[points[0]].a }} </a>
+            </div>&nbsp;&nbsp;&nbsp;
+            <div appColor class="col-sm" (click)=som(q.anser[points[1]].istrue)>
+                One of three columns
+                <a href=''> {{ q.anser[points[1]].a }} </a>
+            </div>&nbsp;&nbsp;&nbsp;
+            <div appColor class="col-sm" (click)=som(q.anser[points[2]].istrue)>
+                One of three columns
+                <a href=''> {{ q.anser[points[2]].a }} </a>
+            </div>&nbsp;&nbsp;&nbsp;
+            <div appColor class="col-sm" (click)=som(q.anser[points[3]].istrue)>
+                One of three columns
+                <a href=''> {{ q.anser[points[3]].a }} </a>
+            </div>
+        </div>
+    </div>
+
+</div>

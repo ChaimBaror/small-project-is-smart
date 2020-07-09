@@ -1,0 +1,16 @@
+.col-sm{
+    border: 1px solid firebrick;
+    height: 50px;
+    border-style: dashed;
+}
+
+li{
+    text-align: center;
+    border: gold 2px solid;
+    border-style: border;
+}
+.container{
+    text-align: center;
+    border:royalblue 5px solid;
+    border-style: double;  
+}
