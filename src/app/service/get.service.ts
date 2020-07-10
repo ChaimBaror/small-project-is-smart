@@ -1,14 +1,35 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
+interface RootObject {
+  response_code: number;
+  results: Result[];
+}
+
+interface Result {
+  category: string;
+  type: string;
+  difficulty: string;
+  question: string;
+  correct_answer: string;
+  incorrect_answers: string[];
+}
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class GetService {
 
+  url = {
+  api :'https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple'
+  }
+
+  
   constructor(private http :HttpClient) { }
-   getdata(){
-      this.http.get
+   getdata(url): Observable<Result>{
+      return this.http.get<Result>(url)
   }
 
   

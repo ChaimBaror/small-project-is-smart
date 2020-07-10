@@ -1,8 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Qushin } from 'src/app/class/qushin';
+import { Qushin, Itme } from 'src/app/class/qushin';
 import { WizardValidators } from 'src/app/service/WizardValidators';
+import { db } from 'src/app/db';
+import { GetService } from 'src/app/service/get.service';
 
-WizardValidators
+
+interface Result {
+  category: string;
+  type: string;
+  difficulty: string;
+  question: string;
+  correct_answer: string;
+  incorrect_answers: string[];
+}
 
 @Component({
   selector: 'app-home',
@@ -12,12 +22,23 @@ WizardValidators
 export class HomeComponent implements OnInit {
 
    points = [0, 1, 2, 3];
-
+   items: Itme[] = db;
+   api : Result[]=[]
+   count=0
   arrayqushin: Qushin[] = [];
   qushin: Qushin = new Qushin();
-  constructor() { }
+  constructor(private myser : GetService) { }
   cunter :number = 0
   ngOnInit(): void {
+
+    
+    this.myser.getdata(this.myser.url.api).subscribe(strgRes => {
+      console.log('rspons api ++++++' + strgRes[0]);
+      this.api.push(strgRes)
+
+
+
+  })
 
   }
 
@@ -37,15 +58,20 @@ export class HomeComponent implements OnInit {
   }
 
   
-  som(check:boolean){
-    console.log((check));
+  som(check){
+    console.log(check);
     this.myFunction()
-    
     if(check){
       alert("is very good")
-     
+     this.count++
     }
   }
+
+  isCorrect(question) {
+    console.log(`%c, ${question} red`);
+    
+    return question.options.every(x => x.selected === x.answer) ? 'correct' : 'wrong';
+  };
 
    myFunction():void {
    this. points.sort(function(a, b)
