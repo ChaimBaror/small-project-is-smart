@@ -4,7 +4,10 @@ import { WizardValidators } from 'src/app/service/WizardValidators';
 import { db } from 'src/app/db';
 import { GetService } from 'src/app/service/get.service';
 
-
+interface RootObject {
+  response_code: number;
+  results: Result[];
+}
 interface Result {
   category: string;
   type: string;
@@ -31,14 +34,12 @@ export class HomeComponent implements OnInit {
   cunter :number = 0
   ngOnInit(): void {
 
+
     
-    this.myser.getdata(this.myser.url.api).subscribe(strgRes => {
-      console.log('rspons api ++++++' + strgRes[0]);
-      this.api.push(strgRes)
-
-
-
-  })
+  //   this.myser.getdata(this.myser.url.api).subscribe(strgRes => {
+  //     console.log('rspons api ++++++' + strgRes[0]);
+  //     this.api.push(strgRes)
+  // })
 
   }
 
@@ -58,23 +59,23 @@ export class HomeComponent implements OnInit {
   }
 
   
-  som(check){
-    console.log(check);
+  
+  som(trget){
+    console.log(this.count,trget);
+    console.log("this is answer",this.items[this.count].answer);
+
+if (this.items[this.count].answer==trget){
     this.myFunction()
-    if(check){
-      alert("is very good")
      this.count++
     }
   }
 
   isCorrect(question) {
-    console.log(`%c, ${question} red`);
-    
-    return question.options.every(x => x.selected === x.answer) ? 'correct' : 'wrong';
+    return  (this.items[this.count].answer==question) ? 'correct' : 'wrong';
   };
 
    myFunction():void {
-   this. points.sort(function(a, b)
+   this.points.sort(function(a, b)
    {return 0.5 - Math.random()});
     
   }

@@ -40,6 +40,7 @@
 <div class="container">
     <div class="question">
         <section class="alert alert-primary" role="alert">this is Question: {{items[count].quizNumber}}
+            <img src={{items[count].image}} alt="">
             <h1> {{items[count].question}} </h1>
         </section>
     </div>
@@ -47,19 +48,19 @@
     <hr><br>
     <div>
         <div class="row">
-            <!-- <div class="p-1 m-2 alert {{ isCorrect(items[count].option1) == 'correct'? 'alert-success': 'alert-danger'}}">Your answer is </div> -->
+           <!-- <div class="p-1 m-2 alert {{ isCorrect(items[count].option1) == 'correct'? 'alert-success': 'alert-danger'}}">Your answer is </div>  -->
 
-            <div appColor class="col-sm" (dblclick)=som($event.target)>
-                {{ items[count].option1}}
+            <div appColor class="col-sm" (dblclick)=som(items[count].option1)>
+               <h1> {{ items[count].option1}}</h1>
             </div>&nbsp;&nbsp;&nbsp;
-            <div appColor class="col-sm" (dblclick)=som($event)>
-                {{items[count].option2}}
+            <div appColor class="col-sm" (dblclick)=som(items[count].option2)>
+                    <h1>  {{items[count].option2}}</h1>
             </div>&nbsp;&nbsp;&nbsp;
-            <div appColor class="col-sm" (dblclick)=som($event)>
-                {{ items[count].option3 }} 
+            <div appColor class="col-sm" (dblclick)=som(items[count].option3)>
+                    <h1> {{ items[count].option3 }} </h1>
             </div>&nbsp;&nbsp;&nbsp;
-            <div appColor class="col-sm" (dblclick)=som($event)>
-                {{ items[count].option4 }}
+            <div appColor class="col-sm" (dblclick)=som(items[count].option3)>
+                    <h1>  {{ items[count].option4 }}</h1>
             </div>
         </div>
     </div>

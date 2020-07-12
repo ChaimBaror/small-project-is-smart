@@ -14,3 +14,9 @@ li{
     border:royalblue 5px solid;
     border-style: double;  
 }
+
+.col-sm{
+text-align: center;
+
+background: rgb(108, 124, 167)
+}

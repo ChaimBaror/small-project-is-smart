@@ -26,7 +26,6 @@ export class GetService {
   api :'https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple'
   }
 
-  
   constructor(private http :HttpClient) { }
    getdata(url): Observable<Result>{
       return this.http.get<Result>(url)

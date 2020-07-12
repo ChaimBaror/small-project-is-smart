@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=L, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>0</button>
+    <br>
+    <hr>
+    <button>1</button>
+    <br>
+    <hr>
+    <button>2</button>
+    <script>
+
+
+        let bou = document.getElementsByTagName('button')
+
+        function butt(y) {
+            for (let x = 0; x < bou.length; x++) {
+                bou[x].addEventListener('click',
+                    function col() {
+                        console.log('my vaelue', x, y);
+                    }
+                  
+                )
+            }
+        }
+        butt("chaim")
+        butt(" moshe")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function funk(name) {
+            let x = { a: name }
+            console.log(x.a);
+            function innerFunk(name) {
+                console.log(x, name)
+            }
+            return innerFunk("name1")
+        }
+
+
+        funk("chaim")
+        funk()
+        innerFunk(funk(mmam))
+    </script>
+</body>
+
+</html>

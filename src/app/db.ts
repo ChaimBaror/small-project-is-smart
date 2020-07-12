@@ -10,7 +10,7 @@ export const db: Itme[] = [
         "option2": "Nissan",
         "option3": "Ford",
         "option4": "Susitha",
-        "answer": "Ferrari."
+        "answer": "Ferrari"
     },
     {
         "quizNumber": "2",
