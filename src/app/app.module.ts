@@ -10,6 +10,7 @@ import { ColorDirective } from './directive/color.directive';
 import { FromComponent } from './comp/from/from.component';
 import { UniqueDirective } from './directive/unique.directive';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SignInComponent } from './comp/sign-in/sign-in.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ColorDirective,
     FromComponent,
     UniqueDirective,
-    NavbarComponent
+    NavbarComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

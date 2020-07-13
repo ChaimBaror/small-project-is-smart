@@ -23,7 +23,7 @@ interface Result {
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  clickAnswer:string
    points = [0, 1, 2, 3];
    items: Itme[] = db;
    api : Result[]=[]
@@ -63,11 +63,14 @@ export class HomeComponent implements OnInit {
   som(trget){
     console.log(this.count,trget);
     console.log("this is answer",this.items[this.count].answer);
-
+    
 if (this.items[this.count].answer==trget){
+  this.clickAnswer="correct"
     this.myFunction()
      this.count++
     }
+    else
+    this.clickAnswer="The answer to this is incorrect "
   }
 
   isCorrect(question) {

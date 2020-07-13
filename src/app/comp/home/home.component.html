@@ -33,9 +33,9 @@
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Holy guacamole!</strong>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="false">&times;</span>
+        <span aria-hidden="false">&times;</span>
     </button>
-  </div>
+</div>
 <!-- <app-from></app-from> -->
 <div class="container">
     <div class="question">
@@ -48,23 +48,29 @@
     <hr><br>
     <div>
         <div class="row">
-           <!-- <div class="p-1 m-2 alert {{ isCorrect(items[count].option1) == 'correct'? 'alert-success': 'alert-danger'}}">Your answer is </div>  -->
 
             <div appColor class="col-sm" (dblclick)=som(items[count].option1)>
-               <h1> {{ items[count].option1}}</h1>
+                <h1> {{ items[count].option1}}</h1>
             </div>&nbsp;&nbsp;&nbsp;
             <div appColor class="col-sm" (dblclick)=som(items[count].option2)>
-                    <h1>  {{items[count].option2}}</h1>
+                <h1> {{items[count].option2}}</h1>
             </div>&nbsp;&nbsp;&nbsp;
             <div appColor class="col-sm" (dblclick)=som(items[count].option3)>
-                    <h1> {{ items[count].option3 }} </h1>
+                <h1> {{ items[count].option3 }} </h1>
             </div>&nbsp;&nbsp;&nbsp;
             <div appColor class="col-sm" (dblclick)=som(items[count].option3)>
-                    <h1>  {{ items[count].option4 }}</h1>
+                <h1> {{ items[count].option4 }}</h1>
             </div>
         </div>
     </div>
 </div>
+<section class="p-1 m-2 alert {{ clickAnswer == 'correct'? 'alert-success': 'alert-danger'}}">
+    <div style="text-align: center">
+        <h1> {{clickAnswer}}</h1>
+    </div>
+</section>
+
+
 <!-- category: string;
   type: string;
   difficulty: string;
@@ -72,17 +78,17 @@
   correct_answer: string;
   incorrect_answers: string[]; -->
 
-  <div class="container">
+<div class="container">
     <div class="question">
         <section class="alert alert-primary" role="alert">
-           
-<p>{{api[count].type}}</p>
-<p>{{api[count].difficulty}}</p>
-<p>{{api[count].question}}</p>
-<p>{{api[count].correct_answer}}</p>
+
+            <p>{{api[count].type}}</p>
+            <p>{{api[count].difficulty}}</p>
+            <p>{{api[count].question}}</p>
+            <p>{{api[count].correct_answer}}</p>
         </section>
     </div>
     <br><br>
     <hr><br>
-   
+
 </div>
