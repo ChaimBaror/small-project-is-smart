@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignInComponent } from './comp/sign-in/sign-in.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { SignInComponent } from './comp/sign-in/sign-in.component';
     FromComponent,
     UniqueDirective,
     NavbarComponent,
-    SignInComponent
+    SignInComponent,
+  
   ],
   imports: [
     BrowserModule,
