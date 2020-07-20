@@ -11,6 +11,11 @@ import { FromComponent } from './comp/from/from.component';
 import { UniqueDirective } from './directive/unique.directive';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignInComponent } from './comp/sign-in/sign-in.component';
+import { MainComponent } from './comp/slack/main/main.component';
+import { ChatComponent } from './comp/slack/chat/chat.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatrialModule } from './module/matrial/matrial.module';
+import { ListComponent } from './comp/slack/list/list.component';
 
 
 
@@ -23,6 +28,9 @@ import { SignInComponent } from './comp/sign-in/sign-in.component';
     UniqueDirective,
     NavbarComponent,
     SignInComponent,
+    MainComponent,
+    ChatComponent,
+    ListComponent,
   
   ],
   imports: [
@@ -30,6 +38,9 @@ import { SignInComponent } from './comp/sign-in/sign-in.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatrialModule
+
 
     
   ],

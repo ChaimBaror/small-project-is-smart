@@ -31,5 +31,27 @@ export const db: Itme[] = [
         "option3": "Two",
         "option4": "Five",
         "answer": "Three"
-    }
+    },
+    {
+        "quizNumber": "4",
+        "image": "",
+        "question": "What programming language does Etb know ?",
+        "option1": "java",
+        "option2": "python",
+        "option3": "Angular",
+        "option4": "android",
+        "answer": "Angular"
+    },
+    {
+        "quizNumber": "5",
+        "image": "https://www.google.co.il/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+        "question": "For those who know Google in life ?",
+        "option1": "i`m angry",
+        "option2": "i`m taerd",
+        "option3": "i`m lazy",
+        "option4": "i`m angular",
+        "answer": "i`m lazy"
+    },
+
+
 ]

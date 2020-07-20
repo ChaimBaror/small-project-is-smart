@@ -1,9 +1,9 @@
 <!-- <app-life-cycle></app-life-cycle> -->
 
-<p>sign-in works!</p>
+
 
 <ng-container *ngIf="currentUser.name ; then memberTemplate; else loginButton"></ng-container>
-
+<p>sign-in works!</p>
 <ng-template #loginButton>
     <div class="text-center">
         <!-- <img class="mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTUZSG5yTE1G6AHOJv46iMkMBNv5rMUBPycYA&usqp=CAU"
@@ -46,10 +46,8 @@
 
 <ng-template #memberTemplate>
    
-   
-    <app-navbar>
-            <h1>wellcow my friend </h1>
-            <button (click)=signOut()>sign out</button>
+    <!-- <button (click)=signOut()>sign out</button> -->
+    <app-navbar></app-navbar>
+    <h1>wellcow my friend </h1>
 
-    </app-navbar>
 </ng-template>
