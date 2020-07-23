@@ -16,6 +16,7 @@ import { ChatComponent } from './comp/slack/chat/chat.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatrialModule } from './module/matrial/matrial.module';
 import { ListComponent } from './comp/slack/list/list.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -31,6 +32,7 @@ import { ListComponent } from './comp/slack/list/list.component';
     MainComponent,
     ChatComponent,
     ListComponent,
+    FilterPipe,
   
   ],
   imports: [
@@ -39,7 +41,8 @@ import { ListComponent } from './comp/slack/list/list.component';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatrialModule
+    MatrialModule,
+    FormsModule
 
 
     

@@ -3,14 +3,16 @@
     <nav class="navbar navbar-dark bg-dark">
         <button  class="navbar-toggler-icon" routerLink="home">HOME</button>
         <button routerLink="from" >from</button>
+      
         <button routerLink="slack" >slack</button>
+        <button routerLink="User" >User</button>
        <div  class="navbar-brand" *ngIf="user" >wellcom {{user}}</div>
-     
+       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
             aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <button  class="navbar-toggler"(click)=signOut()>signOut</button>
-    </nav>
+    </nav>s
 </div>
 <router-outlet></router-outlet>

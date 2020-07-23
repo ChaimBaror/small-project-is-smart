@@ -8,7 +8,7 @@ import { SherdService, userApi } from '../sherd.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
+  searchText = '';
   listuser=[]
 
   constructor(private usApi:SherdService) {
@@ -26,6 +26,12 @@ export class ListComponent implements OnInit {
   click(id){
     console.log("click(id)",id);
     this.usApi.clickItmes(id)
+    
+  }
+  clickname(name){
+    console.log("click(search)",name);
+    this.searchText=name
+  
     
   }
  

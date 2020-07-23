@@ -2,27 +2,35 @@
 
 <nav class="navbar navbar-light bg-light form-inline">
 
-  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  <input  class="form-control mr-sm-2" type="search"
+  [(ngModel)]="searchText" placeholder="Search" aria-label="Search">
   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+{{searchText}}
+
 
 </nav>
-
+<!-- <div>
+  <ul  *ngFor="let user of listuser[0]  | filter : searchText">
+    <li>{{user.country}}</li>
+  </ul>
+  
+</div> -->
 <table class="table table-hover table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
-      <th scope="col">company</th>
+      <th scope="col">country</th>
       <!-- <th scope="col">phone</th> -->
     </tr>
   </thead>
   <tbody>
-    <tr (click)=click(user.id) *ngFor="let user of listuser[0]">
+    <tr (click)=click(user.id) *ngFor="let user of listuser[0] | filter : searchText ">
       <th scope="row">{{user.id}}</th>
-      <td (click)=click(user.fname)>{{user.fname}}</td>
-      <td (click)=click(user.lname)>{{user.lname}}</td>
-      <td (click)=click(user.company)>{{user.company}}</td>
+      <td (click)=clickname(user.fname)>{{user.fname}}</td>
+      <td (click)=clickname(user.lname)>{{user.lname}}</td>
+      <td (click)=clickname(user.country)>{{user.country}}</td>
       <!-- <td>{{user.phone}}</td> -->
     </tr>
   </tbody>
