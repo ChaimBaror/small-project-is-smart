@@ -3,15 +3,17 @@
 <mat-drawer-container class="example-container" [hasBackdrop]="hasBackdrop.value">
     
   <mat-drawer class="drawer" #drawer [mode]="mode.value">I'm a drawer 
-      <app-chat></app-chat>
-      
+     <div>
+    <!-- <app-chat></app-chat> -->
+      <app-list></app-list>
+    </div>
   </mat-drawer>
   <mat-drawer-content>
      
     
 
       <button mat-raised-button (click)="drawer.toggle()">Toggle drawer </button>
-      <app-list></app-list>
+  
     <mat-form-field>
       <mat-label>Sidenav mode</mat-label>
       <mat-select #mode value="side">
@@ -28,7 +30,12 @@
         <mat-option [value]="false">False</mat-option>
       </mat-select>
     </mat-form-field>
-   
+
+<div>
+       <!-- <app-list></app-list> -->
+       <app-chat></app-chat>
+
+      </div>
   </mat-drawer-content>
 </mat-drawer-container>
 

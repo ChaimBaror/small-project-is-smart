@@ -1,1 +1,23 @@
 <p>chat works!</p>
+<div>
+    <h1>this my test </h1>
+    <div>{{ userPost$| async |json}} </div>
+    {{userPost$}}
+
+
+    <ul>
+        <li *ngFor="let item of userPost$|async;">
+      
+            name: {{item.product}}
+            
+        </li>
+      </ul>
+
+ 
+        <!-- <div>product: {{post.product}}</div> -->
+        <!-- <div> productad{{post.productad}}</div>
+    <div>productmat: {{post.productmat}}</div>
+    <img src="post.image" alt=""> -->
+
+    <!-- </div> -->
+</div>

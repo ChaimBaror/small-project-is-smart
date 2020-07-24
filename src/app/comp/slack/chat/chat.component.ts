@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SherdService, postApi } from '../sherd.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-chat',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-
-  constructor() { }
+  userPost$: Observable<postApi>
+  constructor(private serHttp :SherdService) { }
 
   ngOnInit(): void {
+   this.userPost$= this.serHttp.getList()
+
+   console.log( "this.userPost$",this.userPost$);
+   
   }
 
 }
