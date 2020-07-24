@@ -11,7 +11,7 @@
 `npm i @ngrx/store-devtools`
 
 ## bootstrap
-
+`npm i bootstrap`
 `@import '~bootstrap/dist/css/bootstrap.css';`
 
 
