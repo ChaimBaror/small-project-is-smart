@@ -1,4 +1,20 @@
-# NgTrivia
+# Ng project angular
+
+
+## Angular Material
+`ng add @angular/material`
+
+## ngRx
+
+`npm install @ngrx/store --save`
+
+`npm i @ngrx/store-devtools`
+
+## bootstrap
+
+`@import '~bootstrap/dist/css/bootstrap.css';`
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
