@@ -17,6 +17,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatrialModule } from './module/matrial/matrial.module';
 import { ListComponent } from './comp/slack/list/list.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment'
+import { StoreMyModuleModule } from './ngrx/store-my-module/store-my-module.module';
+import { FirestoreComponent } from './firestore/firestore/firestore.component';
 
 
 
@@ -33,8 +37,9 @@ import { FilterPipe } from './pipes/filter.pipe';
     ChatComponent,
     ListComponent,
     FilterPipe,
-  
+    FirestoreComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -42,7 +47,10 @@ import { FilterPipe } from './pipes/filter.pipe';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatrialModule,
-    FormsModule
+    FormsModule,
+    StoreMyModuleModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+   
 
 
     

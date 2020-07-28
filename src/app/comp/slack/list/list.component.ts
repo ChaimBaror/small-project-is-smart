@@ -23,6 +23,8 @@ export class ListComponent implements OnInit {
       this.condition = !this.condition
       this.conu = this.conu - 1
     }, 100);
+
+    
     setTimeout(() => {
       clearInterval(myInterval)
       this.condition = true

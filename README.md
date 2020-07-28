@@ -1,5 +1,9 @@
 # Ng project angular
 
+## firebase
+`npm install -g firebase-tools`
+
+`ng add @angular/fire`
 
 ## Angular Material
 `ng add @angular/material`

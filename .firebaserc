@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "slack-demo-2c27f": {
+      "hosting": {
+        "ngTrivia": [
+          "slack-demo-2c27f"
+        ]
+      }
+    }
+  }
+}

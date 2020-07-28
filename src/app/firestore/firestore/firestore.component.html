@@ -1,0 +1,23 @@
+<p >firestore works!</p>
+
+
+<h1 style="text-align: center">firestore</h1>
+
+<input #nameInput >
+<button (click)="addItem(nameInput.value)">add Name</button>
+
+ <ul>
+        <li *ngFor="let item of items |async">
+          {{ item.name }}
+        </li>
+      </ul>
+     
+<!-- {{myItems|json }} -->
+ <!-- <div *ngFor="let item of myItems">
+       {{ item }}
+</div>  -->
+
+<!-- <input [(ngModel)]="mymodul">
+<button (click)="addItem(input.value)">ngModel</button> -->
+
+

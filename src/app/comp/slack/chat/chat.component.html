@@ -2,15 +2,16 @@
 <div>
     <h1>this my test </h1>
     <div>{{ userPost$| async |json}} </div>
-    {{userPost$}}
+    a:{{userPost$}}
 
 
-    <ul>
-        <li *ngFor="let item of userPost$|async;">
-      
-            name: {{item.product}}
-            
-        </li>
+    <ul *ngIf="userPost$| async as item">
+         <img src="item.image" alt="">
+        <li > id: {{item.id}}</li>
+        <li > product: {{item.product}}</li>
+        <li > productad: {{item.productad}}</li>
+        <li > productmat: {{item.productmat}}</li>
+       
       </ul>
 
  

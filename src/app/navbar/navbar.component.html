@@ -1,18 +1,83 @@
-
 <div class="pos-f-t">
     <nav class="navbar navbar-dark bg-dark">
-        <button  class="navbar-toggler-icon" routerLink="home">HOME</button>
-        <button routerLink="from" >from</button>
-      
-        <button routerLink="slack" >slack</button>
-        <button routerLink="User" >User</button>
-       <div  class="navbar-brand" *ngIf="user" >wellcom {{user}}</div>
-       
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
-            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" (click)="drawer.toggle()" data-toggle="collapse"
+            data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <button  class="navbar-toggler"(click)=signOut()>signOut</button>
-    </nav>s
+
+        <!-- <button  class="navbar-toggler-icon" ></button>
+        <button routerLink="home">Games</button>
+        <button routerLink="from" >from</button>
+        <button routerLink="slack" >slack</button>
+        <button routerLink="User" >User</button>
+        <button routerLink="firestore" >firestore</button> -->
+
+        <div class="navbar-brand" *ngIf="user">wellcom {{user}}</div>
+
+        <button class="navbar-toggler" (click)=signOut()>signOut</button>
+    </nav>
 </div>
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+
+
+
+
+<mat-drawer-container class="example-container" [hasBackdrop]="hasBackdrop.value">
+
+    <mat-drawer class="drawer" #drawer [mode]="mode.value">I'm a drawer
+        <div>
+
+            <button mat-raised-button routerLink="home">Games</button>
+
+            <br>
+            <hr>
+            <button mat-raised-button routerLink="from">from</button>
+
+            <br>
+            <hr>
+            <button mat-raised-button routerLink="slack">slack</button>
+
+            <br>
+            <hr>
+            <button mat-raised-button routerLink="User">User</button>
+
+            <br>
+            <hr>
+            <button mat-raised-button routerLink="firestore">firestore</button>
+           
+            <br>
+            <hr>
+            <button mat-raised-button routerLink="Counter">ngRx-Counter</button>
+
+        </div>
+<hr><hr><hr><hr><hr>
+        <mat-form-field [hidden]="false">
+                <mat-label>Sidenav mode</mat-label>
+                <mat-select #mode value="side">
+                    <mat-option value="side">Side</mat-option>
+                    <mat-option value="over">Over</mat-option>
+                    <mat-option value="push">Push</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field  [hidden]="false">
+                <mat-label>Has backdrop</mat-label>
+                <mat-select #hasBackdrop value="true">
+                    <mat-option>Unset</mat-option>
+                    <mat-option [value]="true">True</mat-option>
+                    <mat-option [value]="false">False</mat-option>
+                </mat-select>
+            </mat-form-field> 
+    </mat-drawer>
+    <mat-drawer-content>
+
+        <!-- <button mat-raised-button (click)="drawer.toggle()">Toggle drawer </button> -->
+
+        <div >
+            <router-outlet></router-outlet>
+        </div>
+
+      
+      
+   </mat-drawer-content> 
+</mat-drawer-container> 
