@@ -9,13 +9,14 @@ import { Observable } from 'rxjs';
 })
 export class ChatComponent implements OnInit {
   userPost$: Observable<postApi>
-  constructor(private serHttp :SherdService) { }
+
+  constructor(private serHttp: SherdService) { }
 
   ngOnInit(): void {
-   this.userPost$= this.serHttp.getList()
+    this.userPost$ = this.serHttp.getList()
+  
+    console.log("this.userPost$", this.userPost$);
 
-   console.log( "this.userPost$",this.userPost$);
-   
   }
 
 }

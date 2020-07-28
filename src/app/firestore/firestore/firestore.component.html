@@ -1,23 +1,34 @@
-<p >firestore works!</p>
+<p>firestore works!</p>
 
 
-<h1 style="text-align: center">firestore</h1>
-
-<input #nameInput >
+<h1>firestore</h1>
+<form [formGroup]="loginForm">
+  <div>
+    name: <input type="text" placeholder="your name" formControlName="name">
+  </div>
+  <div>
+    mail: <input type="text" placeholder="your mail" formControlName="mail">
+  </div>
+  <div>
+    password: <input type="password" placeholder="your password" formControlName="password">
+  </div>
+</form>
+<button (click)="login()">login</button>
+<hr>
+<hr>
+<input #nameInput>
 <button (click)="addItem(nameInput.value)">add Name</button>
 
- <ul>
-        <li *ngFor="let item of items |async">
-          {{ item.name }}
-        </li>
-      </ul>
-     
+<ul>
+  <li *ngFor="let item of items |async">
+    {{ item.name }}
+  </li>
+</ul>
+
 <!-- {{myItems|json }} -->
- <!-- <div *ngFor="let item of myItems">
+<!-- <div *ngFor="let item of myItems">
        {{ item }}
 </div>  -->
 
 <!-- <input [(ngModel)]="mymodul">
 <button (click)="addItem(input.value)">ngModel</button> -->
-
-

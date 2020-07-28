@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SherdService, userApi } from '../sherd.service';
+import { LoginService, ISignup } from 'src/app/firestore/firestore/login.service';
+import { Observable } from 'rxjs';
 
 
 
@@ -13,9 +15,13 @@ export class ListComponent implements OnInit {
   listuser = []
   condition = true
   conu: number
+  userfirestore$: Observable<ISignup[]>
 
-  constructor(private usApi: SherdService) {}
-
+  constructor(private usApi: SherdService,private fire: LoginService
+    ) {}
+    edit(id){
+      this.fire.usersCollection.doc()
+    }
 
   conditionsfun() {
     this.conu = 30
@@ -42,6 +48,7 @@ export class ListComponent implements OnInit {
     console.log(this.usApi.user, "this.usApi");
     console.log(this.listuser, "this.listuser");
 
+    this.userfirestore$ = this.fire.users$
   }
 
   click(id) {

@@ -15,6 +15,7 @@ export class SignInComponent implements OnInit {
   constructor(public serUser: UserService, private fb: FormBuilder) { }
 
   signfrom = this.fb.group({
+    
     name: ['chaim', [Validators.required, Validators.minLength(2)]],
     email: ['', Validators.email],
     password: ['', [Validators.pattern("^[0-9]*$"), Validators.min(3), Validators.max(17)]],

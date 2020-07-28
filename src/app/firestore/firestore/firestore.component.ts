@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable, of, from } from 'rxjs';
-
+import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { LoginService } from './login.service';
 
 export interface Item {
   name: string;
 }
+
 
 
 @Component({
@@ -17,23 +19,25 @@ export class FirestoreComponent implements OnInit {
 
   readonly channels = '/channels/hsIlVYXj6jSfBnAWCTcX'
 
-
   // channelsCollection: AngularFirestoreCollection<any>;
 
-  itemsCollection 
-  // : AngularFirestoreCollection<Item>;
+  itemsCollection : AngularFirestoreCollection<Item>;
   items : Observable<Item[]>;
  
   channel: Observable<any[]>;
 
+  loginForm:FormGroup= new FormGroup({
+    name: new FormControl('',[Validators.required , Validators.minLength(2)]),
+    mail: new FormControl('',[Validators.email , Validators.minLength(2)]),
+    password: new FormControl('',[Validators.required , Validators.minLength(2)])
+  })
 
-
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore,
+    private loginService : LoginService) { }
 
   ngOnInit(): void {
-    // let obs = from([1,2,3,4]).subscribe(l => l)
+ 
     this.itemsCollection = this.afs.collection<Item>('/items');
-
     // this.channelsCollection = this.afs.collection<Item>(this.channels);
     // this.channel = this.channelsCollection.valueChanges()
     this.items = this.itemsCollection.valueChanges()
@@ -49,4 +53,11 @@ export class FirestoreComponent implements OnInit {
     this.itemsCollection.add({ name: name });
   }
   editItem() { }
+  login(){
+    
+    console.log(this.loginForm.value)
+    const loginData = this.loginForm.value
+    this.loginService.login(loginData)
+    
+  }
 }
