@@ -1,60 +1,23 @@
 <div>
   <p>main works!</p>
 </div>
-<div class="container">
+
+ 
   <div class="row">
-    <div class="col">
-      <!-- <app-chat></app-chat> -->
-      <app-list></app-list>
-    </div>
-    <div class="col">
-      <!-- <app-list></app-list> -->
-      <app-chat></app-chat>
-
-    </div>
-    <div class="col">
-      <app-firestore></app-firestore>
-    </div>
-  </div>
-</div>
-
-<!-- <mat-drawer-container class="example-container" [hasBackdrop]="hasBackdrop.value"> 
-
-  
     
- <mat-drawer class="drawer" #drawer [mode]="mode.value">I'm a drawer 
-     <div>
-     <app-chat></app-chat> 
+    <div class="col-sm-3 ">
       <app-list></app-list>
     </div>
-  </mat-drawer>
-  <mat-drawer-content>
-     
-  
-      <button mat-raised-button (click)="drawer.toggle()">Toggle drawer </button>
-  
-    <mat-form-field>
-      <mat-label>Sidenav mode</mat-label>
-      <mat-select #mode value="side">
-        <mat-option value="side">Side</mat-option>
-        <mat-option value="over">Over</mat-option>
-        <mat-option value="push">Push</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Has backdrop</mat-label>
-      <mat-select #hasBackdrop value="true">
-        <mat-option>Unset</mat-option>
-        <mat-option [value]="true">True</mat-option>
-        <mat-option [value]="false">False</mat-option>
-      </mat-select>
-    </mat-form-field>
 
-<div>
-       <app-list></app-list>
-       <app-chat></app-chat>
+    <div class="col h1">
+      <app-chat></app-chat>
+    </div>
 
-      </div>
-  </mat-drawer-content>
-</mat-drawer-container>
- -->
+    <div class="col " >
+        <button mat-mini-fab (click)=add()>
+            <mat-icon>add</mat-icon>
+          </button>
+      <app-firestore  [hidden]="condition"></app-firestore>
+    </div>
+
+  </div>

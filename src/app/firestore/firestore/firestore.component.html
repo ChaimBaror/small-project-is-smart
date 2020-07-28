@@ -1,8 +1,8 @@
 <p>firestore works!</p>
-
+<div class="container">
 
 <h1>firestore</h1>
-<form [formGroup]="loginForm">
+<form [formGroup]="loginForm" >
   <div>
     name: <input type="text" placeholder="your name" formControlName="name">
   </div>
@@ -17,14 +17,14 @@
 <hr>
 <hr>
 <input #nameInput>
-<button (click)="addItem(nameInput.value)">add Name</button>
+<button   (click)="addItem(nameInput.value)">add Name</button>
 
 <ul>
   <li *ngFor="let item of items |async">
     {{ item.name }}
   </li>
 </ul>
-
+</div>
 <!-- {{myItems|json }} -->
 <!-- <div *ngFor="let item of myItems">
        {{ item }}

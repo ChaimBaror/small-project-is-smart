@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit{
 
   constructor() { }
-
+  condition:boolean=true
   ngOnInit(): void {
   }
-
+add(){
+  this.condition=! this.condition
+}
 }
