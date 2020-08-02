@@ -21,6 +21,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment'
 import { StoreMyModuleModule } from './ngrx/store-my-module/store-my-module.module';
 import { FirestoreComponent } from './firestore/firestore/firestore.component';
+import { FooterComponent } from './navbar/footer/footer.component';
 
 
 
@@ -38,6 +39,7 @@ import { FirestoreComponent } from './firestore/firestore/firestore.component';
     ListComponent,
     FilterPipe,
     FirestoreComponent,
+    FooterComponent,
   ],
   
   imports: [
