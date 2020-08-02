@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './comp/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ColorDirective } from './directive/color.directive';
-import { FromComponent } from './comp/from/from.component';
-import { UniqueDirective } from './directive/unique.directive';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignInComponent } from './comp/sign-in/sign-in.component';
 import { MainComponent } from './comp/slack/main/main.component';
@@ -30,8 +28,7 @@ import { FooterComponent } from './navbar/footer/footer.component';
     AppComponent,
     HomeComponent,
     ColorDirective,
-    FromComponent,
-    UniqueDirective,
+
     NavbarComponent,
     SignInComponent,
     MainComponent,

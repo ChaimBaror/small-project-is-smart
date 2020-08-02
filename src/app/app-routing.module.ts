@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FromComponent } from './comp/from/from.component';
 import { HomeComponent } from './comp/home/home.component';
 import { SignInComponent } from './comp/sign-in/sign-in.component';
 import { MainComponent } from './comp/slack/main/main.component';
@@ -14,7 +13,6 @@ const routes: Routes = [
   { path: 'slack', component: MainComponent },
   { path: 'Sign', component: SignInComponent },
   { path: 'User', component: UserComponent },
-  { path: 'from', component: FromComponent },
   { path: 'home', component: HomeComponent },
   { path: 'firestore', component: FirestoreComponent },
   { path: 'Counter', component: CounterComponent },

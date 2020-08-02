@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Qushin, Itme } from 'src/app/class/qushin';
-import { WizardValidators } from 'src/app/service/WizardValidators';
 import { db } from 'src/app/db';
 import { GetService } from 'src/app/service/get.service';
 

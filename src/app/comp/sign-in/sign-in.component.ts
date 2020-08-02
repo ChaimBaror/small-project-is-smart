@@ -18,7 +18,7 @@ export class SignInComponent implements OnInit {
     
     name: ['chaim', [Validators.required, Validators.minLength(2)]],
     email: ['', Validators.email],
-    password: ['', [Validators.pattern("^[0-9]*$"), Validators.min(3), Validators.max(17)]],
+    password: ['', [Validators.required, Validators.min(4)]],
     agree: [true]
   })
 
@@ -38,8 +38,8 @@ export class SignInComponent implements OnInit {
       this.signfrom.controls.email.value,
       this.signfrom.controls.password.value
     )
+    
   }
-
   signOut() {
     this.serUser.signOut()
     this.currentUser = this.serUser.user
