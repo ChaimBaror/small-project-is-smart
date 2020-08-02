@@ -1,24 +1,33 @@
 <p>chat works!</p>
-<div>
-    <h1>this my test </h1>
-    <div>{{ userPost$| async |json}} </div>
-    a:{{userPost$}}
+<div class="chatScren">
+  <h1>this my test </h1>
+  <!-- <div>{{ userPost$| async |json}} </div> -->
+  <!-- a:{{userPost$}} -->
 
 
-    <ul *ngIf="userPost$| async as item">
-         <img src="item.image" alt="">
-        <li > id: {{item.id}}</li>
-        <li > product: {{item.product}}</li>
-        <li > productad: {{item.productad}}</li>
-        <li > productmat: {{item.productmat}}</li>
-       
-      </ul>
+  <!-- <div *ngIf="chatMassge$"> -->
+     <ul *ngFor="let chat of chatMassge$" ><li>{{chat}} </li></ul>
+  <!-- </div> -->
 
- 
-        <!-- <div>product: {{post.product}}</div> -->
-        <!-- <div> productad{{post.productad}}</div>
+  <ul *ngIf="userPost$| async as item">
+    <img src="item.image" alt="">
+    <li> id: {{item.id}}</li>
+    <li> product: {{item.product}}</li>
+    <li> productad: {{item.productad}}</li>
+    <li> productmat: {{item.productmat}}</li>
+  </ul>
+  <!-- <div>product: {{post.product}}</div> -->
+  <!-- <div> productad{{post.productad}}</div>
     <div>productmat: {{post.productmat}}</div>
     <img src="post.image" alt=""> -->
+  <!-- </div> -->
+</div>
 
-    <!-- </div> -->
+
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)=" addchat(nameInput.value)">chat</button>
+  </div>
+  <textarea #nameInput class="form-control" aria-label="With textarea"></textarea>
 </div>

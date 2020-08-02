@@ -19,8 +19,8 @@ export class ListComponent implements OnInit {
 
   constructor(private usApi: SherdService,private fire: LoginService
     ) {}
-    edit(add){
-      console.log(add);
+    clickEdit(add){
+      console.log(`%c ${add}`,`color : blue`);
       
       // this.fire.edit(add,rov)
     }
