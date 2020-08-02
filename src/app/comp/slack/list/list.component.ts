@@ -19,8 +19,10 @@ export class ListComponent implements OnInit {
 
   constructor(private usApi: SherdService,private fire: LoginService
     ) {}
-    edit(add,rov){
-      this.fire.edit(add,rov)
+    edit(add){
+      console.log(add);
+      
+      // this.fire.edit(add,rov)
     }
 
   conditionsfun() {

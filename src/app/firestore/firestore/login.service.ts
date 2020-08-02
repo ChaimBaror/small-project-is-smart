@@ -14,7 +14,7 @@ export interface ISignup {
   providedIn: 'root'
 })
 export class LoginService {
-countId= 0;
+
   readonly usersPATH = '/Users'
   usersCollection: AngularFirestoreCollection
 
@@ -27,11 +27,9 @@ countId= 0;
 
 
   login(data: ISignup) {
+
     data.id = this.afs.createId();
-   
-    
     console.log(`%c ${data.mail, data.name}`, `color : red`);
-    // data.id= (++this.countId).toString()
 
     this.usersCollection.add(data)
 
@@ -42,6 +40,9 @@ countId= 0;
 
   }
 
+  edit(added,removed){
+     this.usersCollection.valueChanges([added, removed]);
+  }
 
 
   loginUp(data: ISignup) {
