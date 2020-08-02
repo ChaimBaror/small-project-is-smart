@@ -6,11 +6,13 @@ import { MainComponent } from './comp/slack/main/main.component';
 import { UserComponent } from './ngrx/user/user.component';
 import { FirestoreComponent } from './firestore/firestore/firestore.component';
 import { CounterComponent } from './ngrx/counter/counter.component';
+import { MainFromComponent } from './comp/from/main-from/main-from.component';
 
 
 
 const routes: Routes = [
   { path: 'slack', component: MainComponent },
+  { path: 'from', component: MainFromComponent },
   { path: 'Sign', component: SignInComponent },
   { path: 'User', component: UserComponent },
   { path: 'home', component: HomeComponent },

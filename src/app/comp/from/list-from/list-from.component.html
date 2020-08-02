@@ -1,0 +1,14 @@
+<p>list-from works!</p>
+
+<!-- <div>
+    <ul *ngIf="list$ |async as itms">
+        <li>{{itms}}</li>
+    </ul>
+</div> -->
+<!-- <div>{{list$ |json}}</div> -->
+
+<div>
+    <ul *ngFor="let itms of list$ |async ">
+        <li>{{itms}}</li>
+    </ul>
+</div> 

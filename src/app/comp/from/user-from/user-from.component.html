@@ -1,0 +1,26 @@
+<p>user-from works!</p>
+<div>user firestore</div>
+<div class="userlist border border-danger">
+
+<table class="table table-hover ">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">mail user</th>
+        <th scope="col">name user</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userfirestore$|async ">
+        <th scope="row"><a  mat-mini-fab color="link" (click)=clickEdit(user) >
+          <!-- <mat-icon>edit</mat-icon> -->
+        </a></th>
+        <td >{{user.mail}}</td>
+       <td >{{user.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+    <!-- <app-edit [hidden]=""></app-edit> -->
+</div>

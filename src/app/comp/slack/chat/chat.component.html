@@ -5,12 +5,13 @@
   <!-- a:{{userPost$}} -->
 
 
-  <!-- <div *ngIf="chatMassge$"> -->
+  <div *ngIf="chatMassge$">
      <ul *ngFor="let chat of chatMassge$" ><li>{{chat}} </li></ul>
-  <!-- </div> -->
+  </div>
 
+<div>
   <ul *ngIf="userPost$| async as item">
-    <img src="item.image" alt="">
+    <img src="{{item.image}}" alt="">
     <li> id: {{item.id}}</li>
     <li> product: {{item.product}}</li>
     <li> productad: {{item.productad}}</li>
@@ -24,10 +25,10 @@
 </div>
 
 
-
+<!-- 
 <div class="input-group">
   <div class="input-group-prepend">
     <button class="btn btn-outline-success my-2 my-sm-0" (click)=" addchat(nameInput.value)">chat</button>
   </div>
   <textarea #nameInput class="form-control" aria-label="With textarea"></textarea>
-</div>
+</div> -->

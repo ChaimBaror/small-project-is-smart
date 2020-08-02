@@ -20,6 +20,8 @@ import { environment } from 'src/environments/environment'
 import { StoreMyModuleModule } from './ngrx/store-my-module/store-my-module.module';
 import { FirestoreComponent } from './firestore/firestore/firestore.component';
 import { FooterComponent } from './navbar/footer/footer.component';
+import { FromModule } from './comp/from/from.module';
+
 
 
 
@@ -28,7 +30,6 @@ import { FooterComponent } from './navbar/footer/footer.component';
     AppComponent,
     HomeComponent,
     ColorDirective,
-
     NavbarComponent,
     SignInComponent,
     MainComponent,
@@ -37,6 +38,7 @@ import { FooterComponent } from './navbar/footer/footer.component';
     FilterPipe,
     FirestoreComponent,
     FooterComponent,
+
   ],
   
   imports: [
@@ -49,6 +51,7 @@ import { FooterComponent } from './navbar/footer/footer.component';
     FormsModule,
     StoreMyModuleModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    FromModule,
    
 
 

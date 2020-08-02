@@ -1,6 +1,7 @@
 .input-group{
-  background: white
+  background: white;
+  height: 10%;
 }
 .chatScren{
-   height: 90%; 
+   height: 80%; 
 }
