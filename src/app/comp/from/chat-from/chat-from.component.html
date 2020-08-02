@@ -1,8 +1,16 @@
 <p>chat-from works!</p>
 
-<div class="input-group">
+<!-- <div class="input-group">
     <div class="input-group-prepend">
       <button class="btn btn-outline-success my-2 my-sm-0" (click)=" addchat(nameInput.value)">chat</button>
     </div>
     <textarea #nameInput class="form-control" aria-label="With textarea"></textarea>
-  </div>
+  </div> -->
+<div>
+  <form class="input-group" [formGroup]="frominput" (ngSubmit)=onSubmit()>
+      <input type="text"  formControlName="chat">
+
+      <button [disabled]="!frominput.valid">sand</button>
+  </form>
+</div>
+  

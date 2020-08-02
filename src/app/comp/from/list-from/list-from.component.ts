@@ -15,4 +15,7 @@ export class ListFromComponent implements OnInit {
     this.list$ = this.service.getList()
   }
 
+
+
+
 }

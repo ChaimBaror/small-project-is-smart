@@ -8,10 +8,11 @@
   <div *ngIf="chatMassge$">
      <ul *ngFor="let chat of chatMassge$" ><li>{{chat}} </li></ul>
   </div>
+  <!-- <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" alt="..." class="rounded-circle"> -->
 
 <div>
   <ul *ngIf="userPost$| async as item">
-    <img src="{{item.image}}" alt="">
+    <img src="{{item.image}}" alt=""  class="rounded-right">
     <li> id: {{item.id}}</li>
     <li> product: {{item.product}}</li>
     <li> productad: {{item.productad}}</li>

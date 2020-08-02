@@ -22,38 +22,34 @@ export class UserFromComponent implements OnInit {
       // this.fire.edit(add,rov)
     }
 
-  conditionsfun() {
-    this.conu = 30
-    let myInterval = setInterval(() => {
-      this.condition = !this.condition
-      this.conu = this.conu - 1
-    }, 100);
+  // conditionsfun() {
+  //   this.conu = 30
+  //   let myInterval = setInterval(() => {
+  //     this.condition = !this.condition
+  //     this.conu = this.conu - 1
+  //   }, 100);
 
     
-    setTimeout(() => {
-      clearInterval(myInterval)
-      this.condition = true
-    }, 3000)
-  }
+  //   setTimeout(() => {
+  //     clearInterval(myInterval)
+  //     this.condition = true
+  //   }, 3000)
+  // }
 
-  conditions() {
-    this.condition = !this.condition
-  }
+  // conditions() {
+  //   this.condition = !this.condition
+  // }
 
 
   ngOnInit(): void {
 
     this.userfirestore$ = this.fire.users$
-  }
-
-
-
-  clicksom(suo) {
-    console.log("click(suo)", suo);
+    console.log(this.userfirestore$);
     
-
-    // this.deleteuser(name)
   }
+
+
+
 
   deleteuser(id) {
     let index
@@ -67,5 +63,13 @@ export class UserFromComponent implements OnInit {
     console.log("delete user", index, this.listuser[0]);
 
   }
+
+  usersImg = [
+    'https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg',
+    'https://i.pinimg.com/originals/ac/b9/90/acb990190ca1ddbb9b20db303375bb58.jpg',
+    'https://static.turbosquid.com/Preview/001214/650/2V/boy-cartoon-3D-model_D.jpg',
+    'https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg',
+ 
+]
 
 }

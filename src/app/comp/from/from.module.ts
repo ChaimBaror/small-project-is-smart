@@ -4,6 +4,7 @@ import { MainFromComponent } from './main-from/main-from.component';
 import { ListFromComponent } from './list-from/list-from.component';
 import { ChatFromComponent } from './chat-from/chat-from.component';
 import { UserFromComponent } from './user-from/user-from.component';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { UserFromComponent } from './user-from/user-from.component';
     UserFromComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ]
 })
 export class FromModule { }
