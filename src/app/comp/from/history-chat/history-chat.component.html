@@ -1,11 +1,31 @@
 <p>history-chat works!</p>
 
-
-<div class="row align-items-start" *ngFor="let chat of historyChat|async">
+<h2>this history from firestore </h2>
+<div class="row align-items-startv" *ngFor="let chat of  historyChat$ |async">
     <div class="col">
+            <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" alt="..." class="rounded-circle"
+            width="50px" height="50px">
        <span> {{chat.address}}</span>
         <!-- {{chat.date}} -->
     </div>
     <div class="col"> <li>{{chat.chat}}</li></div>
+    <small>{{chat.date}}</small>
 </div>
+
+
+<!-- <div *ngFor="let chat of historyChat|async">
+        <a href="" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+    
+                <h3 class="mb-1">
+                    <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" alt="..." class="rounded-circle"
+                        width="50px" height="50px">
+                    {{chat.address}}
+                </h3>
+                <small>{{chat.date}}</small>
+            </div>
+            <p class="mb-1">{{chat.chat}}</p>
+            <small>this history from firestore</small>
+        </a>
+    </div> -->
 

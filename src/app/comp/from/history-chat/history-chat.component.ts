@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService, posts } from 'src/app/firestore/firestore/login.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'history-chat',
@@ -8,12 +9,12 @@ import { LoginService, posts } from 'src/app/firestore/firestore/login.service';
 })
 export class HistoryChatComponent implements OnInit {
 
-  historyChat 
+  historyChat$ 
 
   constructor(private firestore : LoginService) { }
 
   ngOnInit(): void {
-   this.historyChat = this.firestore.getCHAT()
+   this.historyChat$ = this.firestore.getCHAT()
   }
 
 }

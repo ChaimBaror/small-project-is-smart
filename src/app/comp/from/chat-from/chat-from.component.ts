@@ -37,16 +37,22 @@ export class ChatFromComponent implements OnInit {
   }
 
   addToFirePost(posts) {
+    let date = new Date()
    this.currentUser
     this.firestore.currentUser$.subscribe(user=>
       this.currentUser = user)
-
+      
     let chat: posts = {
+     
       address: this.currentUser.name,
       addressee: "",
       chat: posts,
-      date: new Date()
+      date: date.toLocaleTimeString()
+
       }
+      console.log('date',date.toLocaleTimeString()
+      );
+      
       this.firestore.addCHAT(chat)
 
       console.log("chat post " , chat);

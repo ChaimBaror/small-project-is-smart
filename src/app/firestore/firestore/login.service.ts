@@ -17,7 +17,7 @@ export interface posts {
 address:string
 addressee:string
 chat:string
-date : Date
+date 
 }
 
 @Injectable({
@@ -67,7 +67,6 @@ getCHAT(){
 
 addCHAT(posts:posts ){
   this.chatCollection.add(posts)
-  // this.usersCollection.doc(`Users/${this.user.uid}`).set(text);
 }
 
   login(data: Users) {
@@ -77,20 +76,16 @@ addCHAT(posts:posts ){
 
     this.usersCollection.add(data)
 
-    this.afs.collection(this.usersPATH, ref => ref.where('name', '==' , data.name)
-      .orderBy('name')
-    )
-      .valueChanges({ idField: 'id' })
-      this.currentUser=data
+    // this.afs.collection(this.usersPATH, ref => ref.where('name', '==' , data.name)
+    //   .orderBy('name')
+    // )
+    //   .valueChanges({ idField: 'id' })
+    //   this.currentUser=data
 
       this.currentUser$.next(data)
   }
 
-  edit(added,removed){
-     this.usersCollection.valueChanges([added, removed]);
-  }
-
-
+  
   loginUp(data: Users) {
     // console.log(`%c ${data.mail, data.name}`, `color : red`);
     this.afs.collection(this.usersPATH, ref => ref.where('password', '==', data.password)
