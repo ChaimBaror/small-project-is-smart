@@ -6,8 +6,7 @@
 <p>sign-in works!</p>
 <ng-template #loginButton>
     <div class="text-center">
-        <!-- <img class="mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTUZSG5yTE1G6AHOJv46iMkMBNv5rMUBPycYA&usqp=CAU"
-            height="72"> -->
+       
         <svg width="7em" height="7em" viewBox="0 0 16 16" class="bi bi-controller" fill="currentColor"
             xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
@@ -18,7 +17,26 @@
                 d="M3.5 6.526h3v1h-3v-1zM3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .258.966l-1.932.518a.5.5 0 0 1-.612-.354zm9.976 0a.5.5 0 0 0-.353-.613l-1.932-.518a.5.5 0 1 0-.259.966l1.932.518a.5.5 0 0 0 .612-.354z" />
         </svg>
 
-        <form [formGroup]="signfrom" (ngSubmit)=onSubmit()>
+ <!-- <mat-card class="login-page">
+    <mat-card-title>Login</mat-card-title>
+
+    <mat-card-content>
+      <form [formGroup]="signfrom" class="login-form">
+        <mat-form-field>
+          <input matInput type="name" placeholder="your name" formControlName="name">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput type="email" placeholder="Email" formControlName="mail">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password">
+        </mat-form-field><br>
+        <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!signfrom.valid">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
+      </form>
+    </mat-card-content>
+  </mat-card> -->
+       <form class="login-form" [formGroup]="signfrom" >
 
             <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
             <label for="inputName" class="sr-only">name </label>
@@ -38,16 +56,15 @@
                     <input type="checkbox" formControlName="agree" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <button class="btn btn-lg btn-primary btn-block" (click)='onSubmit()' [disabled]="!signfrom.valid">Sign in</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
-        </form>
+        </form> 
     </div>
 </ng-template>
 
 <ng-template #memberTemplate>
 
-    <!-- <button (click)=signOut()>sign out</button> -->
     <app-navbar></app-navbar>
-    <h1>wellcow my friend </h1>
+
 
 </ng-template>

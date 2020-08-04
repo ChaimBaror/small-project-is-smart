@@ -2,11 +2,12 @@
 
 
 
-<div class="chat">
+<div class="row">
+
   <form class="input-group" [formGroup]="frominput" (ngSubmit)=onSubmit()>
     <input type="text" formControlName="chat">
-
     <button [disabled]="!frominput.valid">sand</button>
   </form>
+
 </div>
 

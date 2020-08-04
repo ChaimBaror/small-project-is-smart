@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import { User } from 'src/app/user';
 import { FormBuilder, Validators } from '@angular/forms';
+import { LoginService, Users } from 'src/app/firestore/firestore/login.service';
 
 
 
@@ -12,14 +13,16 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(public serUser: UserService, private fb: FormBuilder) { }
+  constructor(public serUser: UserService, private fb: FormBuilder,private login :LoginService) { }
+  // User: Users={name : "chaim" ,img: "https://static.turbosquid.com/Preview/001214/650/2V/boy-cartoon-3D-model_D.jpg"};
 
   signfrom = this.fb.group({
     
-    name: ['chaim', [Validators.required, Validators.minLength(2)]],
-    email: ['', Validators.email,],
+    name: ['', [Validators.required, Validators.minLength(2)]],
+    mail: ['', Validators.email ],
     password: ['', [Validators.required, Validators.min(4)]],
-    agree: [true]
+    agree: [true],
+    img : ['https://static.turbosquid.com/Preview/001214/650/2V/boy-cartoon-3D-model_D.jpg']
   })
 
 
@@ -35,9 +38,12 @@ export class SignInComponent implements OnInit {
     console.log(this.signfrom.controls.name.value);
     this.serUser.setUser(
       this.signfrom.controls.name.value,
-      this.signfrom.controls.email.value,
+      this.signfrom.controls.mail.value,
       this.signfrom.controls.password.value
     )
+
+    this.login.login(this.signfrom.value)
+    this.signfrom.reset()
     
   }
   signOut() {

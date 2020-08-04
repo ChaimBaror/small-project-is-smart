@@ -51,15 +51,6 @@ export class LoginService {
     return this.currentUser$.asObservable()
   }
 
-  // signOut() { 
-  //   this.currentUser.uid = ''
-  //   this.currentUser.name =''
-  //   this.currentUser.mail = ''
-  //   this.currentUser.password = ''
-  //   this.currentUser.img = ''
-  //   this.currentUser.password = ''
-  //   console.log(`%c ${ this.currentUser}`,'color:yellow');
-  // }
 getCHAT(){
   return this.chatCollection.valueChanges()
 }
@@ -69,12 +60,12 @@ addCHAT(posts:posts ){
   this.chatCollection.add(posts)
 }
 
-  login(data: Users) {
+  login(newUser: Users) {
 
-    data.uid = this.afs.createId();
-    console.log(`%c ${data.mail, data.name}`, `color : red`);
+    newUser.uid = this.afs.createId();
+    console.log(`%c ${newUser.mail, newUser.name}`, `color : red`);
 
-    this.usersCollection.add(data)
+    this.usersCollection.add(newUser)
 
     // this.afs.collection(this.usersPATH, ref => ref.where('name', '==' , data.name)
     //   .orderBy('name')
@@ -82,14 +73,14 @@ addCHAT(posts:posts ){
     //   .valueChanges({ idField: 'id' })
     //   this.currentUser=data
 
-      this.currentUser$.next(data)
+      this.currentUser$.next(newUser)
   }
 
   
-  loginUp(data: Users) {
+  loginUp(newUser: Users) {
     // console.log(`%c ${data.mail, data.name}`, `color : red`);
-    this.afs.collection(this.usersPATH, ref => ref.where('password', '==', data.password)
-      .where('mail', '==', data.mail)
+    this.afs.collection(this.usersPATH, ref => ref.where('password', '==', newUser.password)
+      .where('mail', '==', newUser.mail)
       .orderBy('name')).valueChanges({ idField: 'id' }).subscribe(console.log)}
 
   signup(signupData: Users) {

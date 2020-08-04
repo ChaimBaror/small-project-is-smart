@@ -15,6 +15,7 @@ export class ListComponent implements OnInit {
   listuser = []
   condition = true
   conu: number
+  thislist=true
   userfirestore$: Observable<Users[]>
 
   constructor(private usApi: SherdService,private fire: LoginService
@@ -24,6 +25,9 @@ export class ListComponent implements OnInit {
       
       // this.fire.edit(add,rov)
     }
+
+
+   
 
   conditionsfun() {
     this.conu = 30
@@ -39,6 +43,16 @@ export class ListComponent implements OnInit {
     }, 3000)
   }
 
+
+  usershow(){
+      this.thislist= !this.thislist
+  }
+  userAPIshow(){
+    this.thislist=true
+  }
+  userfirestoreshow(){
+    this.thislist=false
+  }
   conditions() {
     this.condition = !this.condition
   }

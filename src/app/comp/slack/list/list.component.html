@@ -7,68 +7,80 @@
   </ul>
 </div> -->
 <!-- {{userfirestore$|json}} -->
-<div>user firestore</div>
-<div class="userlist border border-danger">
 
-<table class="table table-hover ">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">mail user</th>
-        <th scope="col">name user</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of userfirestore$|async ">
-        <th scope="row"><a  mat-mini-fab color="link" (click)=clickEdit(user) >
-          <mat-icon>edit</mat-icon>
-        </a></th>
-        <td >{{user.mail}}</td>
-       <td >{{user.name}}</td>
-      </tr>
-    </tbody>
-  </table>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary" (click)=usershow()>Click to replace list</button>
+  <button type="button" class="btn btn-secondary" (click)=userfirestoreshow()>firestore</button>
+  <button type="button" class="btn btn-secondary" (click)=userAPIshow()>mock API</button>
+
 </div>
-<div>
-    <!-- <app-edit [hidden]=""></app-edit> -->
-</div>
-<hr><hr>
 
 
-
-
-<div >user Api
-
-
+<div [hidden]="thislist">
+  <h1 (click)=usershow()> user firestore </h1>
   <nav class="navbar navbar-light bg-light form-inline">
       <input class="form-control mr-sm-2" type="search" [(ngModel)]="searchText" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" (click)=conditionsfun()>delete clicked {{conu}}</button>
     </nav>
+  <div class="userlist border border-danger">
+    <table class="table table-hover ">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">mail user</th>
+          <th scope="col">name user</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userfirestore$|async  | filter : searchText">
+          <th scope="row"><a mat-mini-fab color="link" (click)=clickEdit(user)>
+              <mat-icon>edit</mat-icon>
+            </a></th>
+          <td>{{user.mail}}</td>
+          <td (click)=clickname(user.name)>{{user.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+  </div>
+</div>
 
-    <div class="userlist ">
-<table class="table table-hover table-dark">
-  <thead>
-    <tr  class="list-inline">
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">country</th>
-      <button mat-mini-fab (click)=conditions()>
-        <mat-icon></mat-icon>
-      </button>
-    </tr>
-  </thead>
-  <tbody>
-    <tr (click)=click(user.id) *ngFor="let user of listuser[0] | filter : searchText ">
-      <th scope="row">{{user.id}}</th>
-      <td (click)=clickname(user.fname)>{{user.fname}}</td>
-      <td (click)=clicksom(user.lname)>{{user.lname}}</td>
-      <td (click)=clicksom(user.country)>{{user.country}}</td>
-      <button [disabled]="condition" mat-mini-fab color="primary" (click)=deleteuser(user.id)>
-        <mat-icon>delete</mat-icon>
-      </button>
-    </tr>
-    <!-- [hidden]="condition" -->
-  </tbody>
-</table>
-</div></div>
+
+
+<div [hidden]="!thislist">
+  <h1 (click)=usershow()> user Api</h1>
+
+  <nav class="navbar navbar-light bg-light form-inline">
+    <input class="form-control mr-sm-2" type="search" [(ngModel)]="searchText" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)=conditionsfun()>delete clicked {{conu}}</button>
+  </nav>
+
+  <div class="userlist ">
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr class="list-inline">
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">country</th>
+          <button mat-mini-fab (click)=conditions()>
+            <mat-icon></mat-icon>
+          </button>
+        </tr>
+      </thead>
+      <tbody>
+        <tr (click)=click(user.id) *ngFor="let user of listuser[0] | filter : searchText ">
+          <th scope="row">{{user.id}}</th>
+          <td (click)=clickname(user.fname)>{{user.fname}}</td>
+          <td (click)=clicksom(user.lname)>{{user.lname}}</td>
+          <td (click)=clicksom(user.country)>{{user.country}}</td>
+          <button [disabled]="condition" mat-mini-fab color="primary" (click)=deleteuser(user.id)>
+            <mat-icon>delete</mat-icon>
+          </button>
+        </tr>
+        <!-- [hidden]="condition" -->
+      </tbody>
+    </table>
+  </div>
+</div>

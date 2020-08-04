@@ -27,8 +27,8 @@ const routes: Routes = [
   //     { path: '', redirectTo: 'home', pathMatch: 'full' }
   //   ]
   // },
-  // { path: '', redirectTo: 'Sign', pathMatch: 'full' },
-  // { path:'**' , component:NotFoundComponent},
+  { path: '', redirectTo: 'from', pathMatch: 'full' },
+  { path:'**' , component:MainFromComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

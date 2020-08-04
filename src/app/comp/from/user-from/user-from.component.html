@@ -14,12 +14,10 @@
       <tr *ngFor="let user of userfirestore$|async ">
         <th scope="row" >
           <a *ngIf="currentUser.name == user.name" style="color: red">#</a>
-          <!-- <a  mat-mini-fab color="link"  > -->
-          <!-- <mat-icon>edit</mat-icon> -->
-        <!-- </a> -->
+   
       </th>
         <td (click)=selackUset(user)>{{user.mail}}</td>
-       <td (click)=selackUset(user)>{{user.name}}</td>
+       <td (click)=selackUset(user)>{{user.name | uppercase }}</td>
       </tr>
     </tbody>
   </table>
