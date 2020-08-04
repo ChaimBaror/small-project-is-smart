@@ -17,7 +17,7 @@ export interface Item {
 })
 export class FirestoreComponent implements OnInit {
 
-  readonly channels = '/channels/hsIlVYXj6jSfBnAWCTcX'
+  readonly channels = '/channels'
 
   // channelsCollection: AngularFirestoreCollection<any>;
 
@@ -28,8 +28,8 @@ export class FirestoreComponent implements OnInit {
 
   loginForm:FormGroup= new FormGroup({
     name: new FormControl('',[Validators.required , Validators.minLength(2)]),
-    mail: new FormControl('',[Validators.email , Validators.minLength(2)]),
-    password: new FormControl('',[Validators.required , Validators.minLength(2)])
+    mail: new FormControl('',[Validators.email ]),
+    password: new FormControl('',[Validators.required , Validators.minLength(4)])
   })
 
   constructor(private afs: AngularFirestore,
@@ -58,6 +58,7 @@ export class FirestoreComponent implements OnInit {
     console.log(this.loginForm.value)
     const loginData = this.loginForm.value
     this.loginService.login(loginData)
+    this.loginForm.reset();
     
   }
 }

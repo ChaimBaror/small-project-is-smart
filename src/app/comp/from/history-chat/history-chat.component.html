@@ -1,0 +1,11 @@
+<p>history-chat works!</p>
+
+
+<div class="row align-items-start" *ngFor="let chat of historyChat|async">
+    <div class="col">
+       <span> {{chat.address}}</span>
+        <!-- {{chat.date}} -->
+    </div>
+    <div class="col"> <li>{{chat.chat}}</li></div>
+</div>
+

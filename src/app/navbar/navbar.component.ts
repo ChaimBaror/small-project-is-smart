@@ -10,13 +10,13 @@ import { UserService } from '../service/user.service';
 export class NavbarComponent implements OnInit {
 
   constructor(private serUser: UserService) { }
-  user:string
+  user: string
   ngOnInit(): void {
-this.user=this.serUser.user.name
+    this.user = this.serUser.user.name
   }
 
-  signOut(){
-    this.user='';
+  signOut() {
+    this.user = '';
     this.serUser.signOut()
   }
 

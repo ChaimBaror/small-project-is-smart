@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { LoginService } from 'src/app/firestore/firestore/login.service';
+import { LoginService ,posts } from 'src/app/firestore/firestore/login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShareService   {
+
+
   list$: Subject<string[]> = new Subject();
   chatArr: string[] = [];
 
@@ -20,10 +22,12 @@ export class ShareService   {
     this.chatArr.push(chat)
     this.list$.next(this.chatArr)
     console.log(" this.list$" ,this.list$);
-    // this.chatSerFIRE.setCHAT(chat)
+ 
     // setCHAT(text , id)
     
   }
+
+
 
 
   getList(): Observable<string[]> {

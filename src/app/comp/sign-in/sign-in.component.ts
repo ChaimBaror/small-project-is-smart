@@ -17,7 +17,7 @@ export class SignInComponent implements OnInit {
   signfrom = this.fb.group({
     
     name: ['chaim', [Validators.required, Validators.minLength(2)]],
-    email: ['', Validators.email],
+    email: ['', Validators.email,],
     password: ['', [Validators.required, Validators.min(4)]],
     agree: [true]
   })

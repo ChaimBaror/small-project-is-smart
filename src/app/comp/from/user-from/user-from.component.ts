@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService, ISignup } from 'src/app/firestore/firestore/login.service';
+import { LoginService, Users } from 'src/app/firestore/firestore/login.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -13,11 +13,17 @@ export class UserFromComponent implements OnInit {
   listuser = []
   condition = true
   conu: number
-  userfirestore$: Observable<ISignup[]>
+  currentUser:Users;
+  userfirestore$: Observable<Users[]>
 
-  constructor(private fire: LoginService ) {}
-    clickEdit(add){
-      console.log(`%c ${add}`,`color : blue`);
+  constructor(private Login: LoginService ) {}
+    selackUset(user){
+      console.log(`%c ${user}`,`color : blue`);
+      console.log(`%c ${user.name}`,`color : blue`);
+      console.log(`%c ${user.uid}`,`color : red`);
+      console.log(`%c ${user.mail}`,`color : blue`);
+      this.Login.selectUser(user)
+      
       
       // this.fire.edit(add,rov)
     }
@@ -43,8 +49,11 @@ export class UserFromComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.userfirestore$ = this.fire.users$
+    this.userfirestore$ = this.Login.users$
     console.log(this.userfirestore$);
+
+    this.Login.getCurrentUser().subscribe(user =>
+      this.currentUser= {...user} )
     
   }
 

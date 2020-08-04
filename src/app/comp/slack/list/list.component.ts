@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SherdService, userApi } from '../sherd.service';
-import { LoginService, ISignup } from 'src/app/firestore/firestore/login.service';
+import { LoginService, Users } from 'src/app/firestore/firestore/login.service';
 import { Observable } from 'rxjs';
 
 
@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   listuser = []
   condition = true
   conu: number
-  userfirestore$: Observable<ISignup[]>
+  userfirestore$: Observable<Users[]>
 
   constructor(private usApi: SherdService,private fire: LoginService
     ) {}

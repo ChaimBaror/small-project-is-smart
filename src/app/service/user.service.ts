@@ -21,17 +21,17 @@ export class UserService  {
   constructor() { }
 
   setUser(name, email, password) {
-    console.log("this log ", name, email, password);
+    // console.log("this log ", name, email, password);
     this.cnutor++
     this.user.u_id =this.cnutor.toString()
     this.user.name = name
     this.user.email = email
     this.user.password = password
     // this.user.img=img
-    console.log(`%c ${this.user.name}` ,'color :blue');
-    console.log(`%c ${this.user.u_id}` ,'color :blue');
+    // console.log(`%c ${this.user.name}` ,'color :blue');
+    // console.log(`%c ${this.user.u_id}` ,'color :blue');
     this.arrayUser.push(this.user)
-    console.log("this is esspull", this.arrayUser);
+    // console.log("this is esspull", this.arrayUser);
   }
 
   getArrayUser(){
