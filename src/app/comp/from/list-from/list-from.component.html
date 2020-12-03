@@ -4,8 +4,10 @@
 <h2>this list from Subject</h2>
 <div class="row" *ngFor="let itms of list$ |async">
     <div>
-        <img src='{{currentUser.img}}' alt="..." class="rounded-circle" width="50px" height="50px">
-        <span>{{currentUser.name }}</span>
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQd4ObnWrU7ml2eO_EPN30EORQhhiV5OuBttw&usqp=CAU' alt="{{currentUser.name}}" class="rounded-circle" width="50px" height="50px">
+
+        <!-- <img src='{{currentUser.img}}' alt="..." class="rounded-circle" width="50px" height="50px"> -->
+        <!-- <span>{{currentUser.name }}</span> -->
     </div>
     <div>
         <!-- {{currentUser|json}} -->

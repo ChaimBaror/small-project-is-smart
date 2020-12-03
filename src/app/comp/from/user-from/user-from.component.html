@@ -6,16 +6,20 @@
     <thead>
       <tr>
         <th scope="col">#</th>
+        <th scope="col">mail img</th>
         <th scope="col">mail user</th>
         <th scope="col">name user</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of userfirestore$|async ">
+      <tr *ngFor="let user of userfirestore$ |async ">
         <th scope="row" >
-          <a *ngIf="currentUser.name == user.name" style="color: red">#</a>
+          <a *ngIf="currentUser.mail == user.mail" style="color: greenyellow">#</a>
    
       </th>
+
+      <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQd4ObnWrU7ml2eO_EPN30EORQhhiV5OuBttw&usqp=CAU' alt="{{user.name}}" class="rounded-circle" width="30px" height="30px">
+
         <td (click)=selackUset(user)>{{user.mail}}</td>
        <td (click)=selackUset(user)>{{user.name | uppercase }}</td>
       </tr>

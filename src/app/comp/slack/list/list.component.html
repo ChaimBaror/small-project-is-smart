@@ -33,7 +33,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let user of userfirestore$|async  | filter : searchText">
-          <th scope="row"><a mat-mini-fab color="link" (click)=clickEdit(user)>
+          <th scope="row"><a mat-mini-fab color="link" (click)=clickdelete(user)>
               <mat-icon>edit</mat-icon>
             </a></th>
           <td>{{user.mail}}</td>

@@ -29,9 +29,9 @@ export class FirestoreComponent implements OnInit {
   loginForm:FormGroup= new FormGroup({
     name: new FormControl('',[Validators.required , Validators.minLength(2)]),
     mail: new FormControl('',[Validators.email ]),
-    password: new FormControl('',[Validators.required , Validators.minLength(4)])
-  })
-
+    password: new FormControl('',[Validators.required , Validators.minLength(4)]),
+    Image: new FormControl('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQd4ObnWrU7ml2eO_EPN30EORQhhiV5OuBttw&usqp=CAU')
+})
   constructor(private afs: AngularFirestore,
     private loginService : LoginService) { }
 

@@ -20,9 +20,9 @@ export class ListComponent implements OnInit {
 
   constructor(private usApi: SherdService,private fire: LoginService
     ) {}
-    clickEdit(add){
-      console.log(`%c ${add}`,`color : blue`);
-      
+    clickdelete(user){
+      console.log(`%c ${user.uid}`,`color : blue`);
+      this.fire.usersCollection.doc(user.uid).delete()
       // this.fire.edit(add,rov)
     }
 
